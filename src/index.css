@@ -1,0 +1,12 @@
+:root {
+  --cinza: #afafaf;
+  --ciano: #0096a9;
+  --ciano-escuro: #699ba2;
+  --branco-form: #f6f6f6;
+  --offwhite: #f2f2f2;
+  --branco: #ffffff;
+}
+
+body {
+  margin: 0;
+}
