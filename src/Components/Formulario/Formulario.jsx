@@ -8,7 +8,7 @@ export function Formulario(props) {
   const [nome, setNome] = useState("");
   const [origem, setOrigem] = useState("");
   const [imagem, setImagem] = useState("");
-  const [campanha, setCampanha] = useState("");
+  // const [campanha, setCampanha] = useState("");
   const [classe, setClasse] = useState("");
 
   const aoSalvar = (evento) => {
@@ -17,20 +17,18 @@ export function Formulario(props) {
       nome,
       origem,
       imagem,
-      campanha,
+      // campanha,
       classe,
     });
 
     setNome("");
     setOrigem("");
     setImagem("");
-    setCampanha("");
+    // setCampanha("");
     setClasse("");
   };
 
   return (
-
-    
     <section className="formulario">
       <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do personagem.</h2>
@@ -54,13 +52,13 @@ export function Formulario(props) {
           label="Imagem"
           placeholder="Digite o endereço da sua imagem"
         />
-        <CampoTexto
+        {/* <CampoTexto
           valor={campanha}
           aoAlterado={(valor) => setCampanha(valor)}
           obrigatorio={true}
           label="Campanha"
           placeholder="Digite o nome da campanha"
-        />
+        /> */}
 
         <ListaSuspensa
           valor={classe}

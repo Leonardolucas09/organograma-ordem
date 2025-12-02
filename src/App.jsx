@@ -47,7 +47,7 @@ function App() {
   const [personagens, setPersonagens] = useState([]);
 
   function aoNovoPersonagemAdicionado(personagem) {
-    debugger
+    // debugger
     setPersonagens([...personagens, personagem]);
   }
 
