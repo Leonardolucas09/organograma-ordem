@@ -2,9 +2,9 @@ import "./CampoTexto.css";
 
 export function CampoTexto(props) {
   const placeholderModificado = `${props.placeholder}...`;
-  
+
   function aoDigitado(evento) {
-    props.aoAlterado(evento.target.value)
+    props.aoAlterado(evento.target.value);
   }
 
   return (

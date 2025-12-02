@@ -5,22 +5,11 @@ import Botao from "../Botao";
 import { useState } from "react";
 
 export function Formulario(props) {
-  const classes = [
-    "Mundano",
-    "Combatente Sobrevivente",
-    "Especialista Sobrevivente",
-    "Ocultista Sobrevivente",
-    "Combatente",
-    "Especialista",
-    "Ocultista",
-  ];
-
-  const [nome, setNome] = useState("")
-  const [origem, setOrigem] = useState("")
-  const [imagem, setImagem] = useState("")
-  const [campanha, setCampanha] = useState("")
-  const [classe, setClasse] = useState("")
-
+  const [nome, setNome] = useState("");
+  const [origem, setOrigem] = useState("");
+  const [imagem, setImagem] = useState("");
+  const [campanha, setCampanha] = useState("");
+  const [classe, setClasse] = useState("");
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
@@ -29,49 +18,57 @@ export function Formulario(props) {
       origem,
       imagem,
       campanha,
-      classe
+      classe,
     });
+
+    setNome("");
+    setOrigem("");
+    setImagem("");
+    setCampanha("");
+    setClasse("");
   };
 
   return (
+
+    
     <section className="formulario">
       <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do personagem.</h2>
         <CampoTexto
           valor={nome}
-          aoAlterado={valor => setNome(valor)}
+          aoAlterado={(valor) => setNome(valor)}
           obrigatorio={true}
           label="Nome"
           placeholder="Digite seu nome"
         />
         <CampoTexto
           valor={origem}
-          aoAlterado={valor => setOrigem(valor)}
+          aoAlterado={(valor) => setOrigem(valor)}
           obrigatorio={true}
           label="Origem"
           placeholder="Digite sua origem"
         />
         <CampoTexto
           valor={imagem}
-          aoAlterado={valor => setImagem(valor)}
+          aoAlterado={(valor) => setImagem(valor)}
           label="Imagem"
           placeholder="Digite o endereço da sua imagem"
         />
         <CampoTexto
           valor={campanha}
-          aoAlterado={valor => setCampanha(valor)}
+          aoAlterado={(valor) => setCampanha(valor)}
           obrigatorio={true}
           label="Campanha"
           placeholder="Digite o nome da campanha"
         />
 
-        <ListaSuspensa 
+        <ListaSuspensa
           valor={classe}
-          aoAlterado={valor => setClasse(valor)}
-          label="Classes" 
-          itens={classes} 
+          aoAlterado={(valor) => setClasse(valor)}
+          label="Classes"
+          itens={props.classes}
         />
-        
+
         <Botao>Criar Card</Botao>
       </form>
     </section>
